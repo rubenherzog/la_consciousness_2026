@@ -63,13 +63,14 @@ img {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  min-height: 78px;
+  min-height: 64px;
 }
 
 .brand {
   font-family: "Fraunces", serif;
-  font-size: 1.05rem;
-  font-weight: 600;
+  font-size: calc(1.05rem + 6pt);
+  font-weight: 700;
+  color: #10212e;
   letter-spacing: 0.01em;
 }
 
@@ -81,8 +82,9 @@ img {
 }
 
 .site-nav a {
-  color: var(--ink-soft);
-  font-size: 0.98rem;
+  color: #203342;
+  font-size: calc(0.98rem + 2pt);
+  font-weight: 600;
 }
 
 .site-nav a:hover,
@@ -95,7 +97,7 @@ img {
 .hero {
   position: relative;
   overflow: hidden;
-  padding: 5rem 0 3rem;
+  padding: 1.5rem 0 3rem;
 }
 
 .hero::before {
@@ -128,9 +130,10 @@ img {
 }
 
 .hero-copy {
-  padding: clamp(2rem, 4vw, 4rem);
+  padding: clamp(0.8rem, 2vw, 1.5rem) clamp(2rem, 4vw, 4rem) clamp(2rem, 4vw, 4rem) clamp(2rem, 4vw, 4rem);
   border-radius: calc(var(--radius-lg) + 8px);
   background: linear-gradient(160deg, rgba(252, 253, 255, 0.96), rgba(239, 244, 248, 0.9));
+  color: #142533;
 }
 
 .hero-panel {
@@ -152,6 +155,25 @@ img {
   text-transform: uppercase;
 }
 
+.hero-copy .eyebrow {
+  font-size: calc(0.84rem + 4pt);
+}
+
+#contact .eyebrow {
+  font-size: calc(0.84rem + 6pt);
+}
+
+#about .eyebrow,
+#venue .eyebrow,
+#registration .eyebrow,
+#programme .eyebrow {
+  font-size: calc(0.84rem + 6pt);
+}
+
+.hero-panel .panel-label {
+  font-size: calc(0.84rem + 4pt);
+}
+
 h1,
 h2,
 h3 {
@@ -163,7 +185,7 @@ h3 {
 
 h1 {
   max-width: 14ch;
-  font-size: clamp(1.9rem, 3.35vw, 3.1rem);
+  font-size: calc(clamp(1.9rem, 3.35vw, 3.1rem) + 4pt);
 }
 
 h2 {
@@ -221,11 +243,11 @@ h3 {
 
 .assc-affiliation-copy strong {
   font-size: 0.96rem;
-  color: var(--ink);
+  color: #162734;
 }
 
 .assc-affiliation-copy span {
-  color: var(--ink-soft);
+  color: #415768;
   font-size: 0.94rem;
   line-height: 1.35;
 }
@@ -281,8 +303,19 @@ h3 {
 }
 
 .text-link {
-  display: inline-block;
+  display: block;
   font-weight: 600;
+}
+
+.survey-link {
+  color: var(--accent-strong);
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+
+.survey-link:hover,
+.survey-link:focus-visible {
+  color: var(--accent);
 }
 
 .detail-block {
@@ -300,9 +333,21 @@ h3 {
   color: var(--ink-soft);
 }
 
+.hero-panel .detail-title {
+  font-size: calc(0.82rem + 4pt);
+}
+
 .detail-text,
 .muted {
   color: var(--ink-soft);
+}
+
+.hero-panel .detail-text,
+.hero-panel .muted,
+.hero-panel .text-link,
+.hero-panel .button {
+  font-size: calc(1rem + 4pt);
+  color: var(--ink);
 }
 
 .section {
@@ -325,7 +370,20 @@ h3 {
 
 .section-content {
   display: grid;
-  gap: 1rem;
+  gap: 0.35rem;
+}
+
+.section-content p {
+  margin: 0;
+}
+
+#about .section-content {
+  padding-top: 2.3rem;
+}
+
+#about .section-content p {
+  color: #203342;
+  font-weight: 500;
 }
 
 .cards {
@@ -335,6 +393,30 @@ h3 {
 
 .cards-two {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+#registration .registration-priority {
+  font-size: calc(1.08rem + 4pt);
+}
+
+.venue-programme-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.venue-card {
+  max-width: none;
+}
+
+.programme-panel {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.programme-heading {
+  margin-bottom: 0;
 }
 
 .card {
@@ -367,14 +449,15 @@ h3 {
 
 .programme-list {
   display: grid;
-  gap: 1rem;
+  gap: 0.8rem;
 }
 
 .programme-item {
   display: grid;
-  grid-template-columns: 120px minmax(0, 1fr);
-  gap: 1rem;
-  padding: 1.35rem 1.5rem;
+  grid-template-columns: 128px minmax(0, 1fr);
+  gap: 0.9rem;
+  align-items: start;
+  padding: 1rem 1.1rem;
   border-radius: var(--radius-md);
   background: var(--surface-strong);
 }
@@ -383,17 +466,32 @@ h3 {
   margin: 0;
   color: var(--accent-warm);
   font-family: "Fraunces", serif;
-  font-size: 1.4rem;
+  font-size: calc(1.02rem + 2pt);
   font-weight: 600;
+  white-space: nowrap;
+  line-height: 1.2;
 }
 
 .programme-copy {
   display: grid;
-  gap: 0.35rem;
+  gap: 0.25rem;
+}
+
+.programme-copy h3 {
+  font-size: calc(1.02rem + 2pt);
+  line-height: 1.2;
+}
+
+.programme-copy p {
+  font-size: 0.98rem;
 }
 
 .site-footer {
   padding: 1rem 0 2.5rem;
+}
+
+#contact .card:last-child p {
+  font-size: calc(1.08rem + 6pt);
 }
 
 .footer-wrap {
@@ -408,9 +506,14 @@ h3 {
 @media (max-width: 900px) {
   .hero-grid,
   .section-grid,
+  .venue-programme-grid,
   .cards-two,
   .programme-item {
     grid-template-columns: 1fr;
+  }
+
+  #about .section-content {
+    padding-top: 0;
   }
 
   h1 {
@@ -434,7 +537,7 @@ h3 {
   }
 
   .hero {
-    padding-top: 2.5rem;
+    padding-top: 2rem;
   }
 
   .hero-copy,
