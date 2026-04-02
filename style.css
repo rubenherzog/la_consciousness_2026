@@ -386,6 +386,16 @@ h3 {
   font-weight: 500;
 }
 
+#about .about-bullets {
+  margin: 0.25rem 0 0;
+  padding-left: 1.25rem;
+  color: #203342;
+}
+
+#about .about-bullets li + li {
+  margin-top: 0.35rem;
+}
+
 .cards {
   display: grid;
   gap: 1.25rem;
